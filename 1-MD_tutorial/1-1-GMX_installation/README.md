@@ -1,32 +1,55 @@
 # GMX installation  
 ## GMX Version 2021.2
 ### \# Install pre-request
+```diff
 sudo apt install build-essential  
 sudo apt install cmake  
-    
+``` 
 ### \# check system  
-gcc --version \# check gcc compiler  
-lscpu \# check CPU information, such as SIMD  
-nvidia-smi \# check nvidia driver 
-
+```diff
+# check gcc compiler
+gcc --version
+# check CPU information, such as SIMD
+lscpu
+# check nvidia driver
+nvidia-smi
+```
 ### \# Download package
+```diff
 wget https://ftp.gromacs.org/gromacs/gromacs-2021.2.tar.gz  
 wget https://ftp.gromacs.org/regressiontests/regressiontests-2021.2.tar.gz  
 tar -xvzf gromacs-2021.2.tar.gz  
 tar -xvzf regressiontests-2021.2.tar.gz  
-
-### \# cmake
+```
+### \# cmake when you have GPU with proper driver/cuda  
+```diff
 mkdir build-001  
 cd build-001  
-cmake ../gromacs-2021.2&nbsp;\\  
-&nbsp;-DGMX_BUILD_OWN_FFTW=ON&nbsp;\\  
-&nbsp;-DREGRESSIONTEST_DOWNLOAD=OFF&nbsp;\\  
-&nbsp;-DREGRESSIONTEST_PATH=../regressiontests-2021.2&nbsp;\\  
-&nbsp;-DCMAKE_C_COMPILER=gcc&nbsp;\\  
-&nbsp;<font color=Blue>-DGMX_GPU=CUDA</font>&nbsp;\\  
-&nbsp;-DCMAKE_INSTALL_PREFIX=~/Software/GMX/2021.2-CPU2  
-
+cmake ../gromacs-2021.2 \  
+  -DGMX_BUILD_OWN_FFTW=ON \  
+  -DREGRESSIONTEST_DOWNLOAD=OFF \  
+  -DREGRESSIONTEST_PATH=../regressiontests-2021.2 \  
+  -DCMAKE_C_COMPILER=gcc \  
+  -DGMX_GPU=CUDA \  
+  -DCMAKE_INSTALL_PREFIX=~/Software/GMX/2021.2-CPU2
+#change the INSTALL_PREFIX according to your need
+```
+### \# cmake CPU version
+```diff
+mkdir build-001  
+cd build-001  
+cmake ../gromacs-2021.2 \  
+  -DGMX_BUILD_OWN_FFTW=ON \  
+  -DREGRESSIONTEST_DOWNLOAD=OFF \  
+  -DREGRESSIONTEST_PATH=../regressiontests-2021.2 \  
+  -DCMAKE_C_COMPILER=gcc \  
+  -DGMX_GPU=CUDA \  
+  -DCMAKE_INSTALL_PREFIX=~/Software/GMX/2021.2-CPU2  
+#change the INSTALL_PREFIX according to your need
+```
 ### \# build - test - install
-make -j 4  
+```diff
+make -j 4 #4 cores will be used here, you can use more  
 make check  
-make install
+make install  
+```
