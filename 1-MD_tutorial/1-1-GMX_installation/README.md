@@ -4,10 +4,10 @@
 sudo apt install build-essential  
 sudo apt install cmake  
     
-### \# check gcc  
-gcc --version
-### \# check CPU
-lscpu
+### \# check system  
+gcc --version \# check gcc compiler  
+lscpu \# check CPU information, such as SIMD  
+nvidia-smi \# check nvidia driver 
 
 ### \# Download package
 wget https://ftp.gromacs.org/gromacs/gromacs-2021.2.tar.gz  
@@ -23,6 +23,7 @@ cmake ../gromacs-2021.2&nbsp;\\
 &nbsp;-DREGRESSIONTEST_DOWNLOAD=OFF&nbsp;\\  
 &nbsp;-DREGRESSIONTEST_PATH=../regressiontests-2021.2&nbsp;\\  
 &nbsp;-DCMAKE_C_COMPILER=gcc&nbsp;\\  
+&nbsp;<font color=Blue>-DGMX_GPU=CUDA</font>&nbsp;\\  
 &nbsp;-DCMAKE_INSTALL_PREFIX=~/Software/GMX/2021.2-CPU2  
 
 ### \# build - test - install
