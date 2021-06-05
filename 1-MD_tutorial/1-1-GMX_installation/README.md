@@ -4,7 +4,7 @@ sudo apt install build-essential
 sudo apt install cmake  
     
 ### \# check gcc  
-ggc --version
+gcc --version
 ### \# check CPU
 lscpu
 
