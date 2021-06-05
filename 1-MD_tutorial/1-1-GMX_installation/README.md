@@ -17,9 +17,9 @@ tar -xvzf regressiontests-2021.2.tar.gz
 ### \# cmake
 mkdir build-001  
 cd build-001  
-cmake ../gromacs-2021.2&nbsp; \\  
-&ensp;-DGMX_BUILD_OWN_FFTW=ON&nbsp; \\  
-&ensp;-DREGRESSIONTEST_DOWNLOAD=OFF \\  
-&ensp;-DREGRESSIONTEST_PATH=../regressiontests-2021.2&nbsp; \\  
-&ensp;-DCMAKE_C_COMPILER=gcc&nbsp; \\  
-&ensp;-DCMAKE_INSTALL_PREFIX=~/Software/GMX/2021.2-CPU2  
+cmake ../gromacs-2021.2&nbsp;\\  
+&nbsp;-DGMX_BUILD_OWN_FFTW=ON&nbsp;\\  
+&nbsp;-DREGRESSIONTEST_DOWNLOAD=OFF&nbsp;\\  
+&nbsp;-DREGRESSIONTEST_PATH=../regressiontests-2021.2&nbsp;\\  
+&nbsp;-DCMAKE_C_COMPILER=gcc&nbsp;\\  
+&nbsp;-DCMAKE_INSTALL_PREFIX=~/Software/GMX/2021.2-CPU2  
