@@ -9,7 +9,7 @@ sudo apt install bc csh flex xorg-dev zlib1g-dev \
 https://ambermd.org/index.php
 ```diff
 tar xvfj AmberTools21.tar.bz2 # Ambertool2 are open source
-tar xvfj Amber20.tar.bz2      #only when you have amber
+tar xvfj Amber20.tar.bz2      # only when you have amber
 ```
 
 ### \# Enter source code dir and cmake
