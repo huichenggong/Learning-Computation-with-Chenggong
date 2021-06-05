@@ -1,4 +1,5 @@
-## GMX installation  
+# GMX installation  
+## GMX Version 2021.2
 ### \# Install pre-request
 sudo apt install build-essential  
 sudo apt install cmake  
@@ -9,7 +10,7 @@ gcc --version
 lscpu
 
 ### \# Download package
-wget ftp://ftp.gromacs.org/gromacs/gromacs-2021.2.tar.gz  
+wget https://ftp.gromacs.org/gromacs/gromacs-2021.2.tar.gz  
 wget https://ftp.gromacs.org/regressiontests/regressiontests-2021.2.tar.gz  
 tar -xvzf gromacs-2021.2.tar.gz  
 tar -xvzf regressiontests-2021.2.tar.gz  
@@ -23,3 +24,8 @@ cmake ../gromacs-2021.2&nbsp;\\
 &nbsp;-DREGRESSIONTEST_PATH=../regressiontests-2021.2&nbsp;\\  
 &nbsp;-DCMAKE_C_COMPILER=gcc&nbsp;\\  
 &nbsp;-DCMAKE_INSTALL_PREFIX=~/Software/GMX/2021.2-CPU2  
+
+### \# build - test - install
+make -j 4  
+make check  
+make install
