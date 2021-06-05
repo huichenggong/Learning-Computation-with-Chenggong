@@ -31,7 +31,7 @@ cmake ../gromacs-2021.2 \
   -DREGRESSIONTEST_PATH=../regressiontests-2021.2 \  
   -DCMAKE_C_COMPILER=gcc \  
   -DGMX_GPU=CUDA \  
-  -DCMAKE_INSTALL_PREFIX=~/Software/GMX/2021.2-CPU2
+  -DCMAKE_INSTALL_PREFIX=~/Software/GMX/2021.2-cuda
 #change the INSTALL_PREFIX according to your need
 ```
 ### \# cmake CPU version
