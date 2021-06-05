@@ -1,5 +1,5 @@
-# GMX installation  
-## GMX Version 2021.2  
+# Amber installation  
+## Ambertools2021 Amber20  
 ### \# Install pre-request  
 ```diff
 sudo apt install bc csh flex xorg-dev zlib1g-dev \
