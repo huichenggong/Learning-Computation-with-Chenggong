@@ -2,8 +2,7 @@
 ## GMX Version 2021.2  
 ### \# Install pre-request  
 ```diff
-sudo apt install build-essential
-sudo apt install cmake
+sudo apt install build-essential cmake
 ``` 
 ### \# check system  
 ```diff
