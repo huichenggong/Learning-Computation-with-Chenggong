@@ -14,7 +14,7 @@ c0    b<sub>0</sub> (nm)
 c1    k<sub>b</sub> (kJ mol<sup>−1</sup>nm<sup>−2</sup>)
 ```
 [ bonds ]
-;    ai     aj funct        c0         c1         c2         c3
+;    ai     aj funct        b0      kb
       1      2     1   0.10969 276646.080000
       1      3     1   0.10969 276646.080000
       1      4     1   0.10969 276646.080000
@@ -28,7 +28,7 @@ c0   θ<sub>0</sub> (deg)
 c1   k<sub>θ</sub> (kJ mol<sup>−1</sup>rad<sup>−2</sup>)
 ```
 [ angles ]
-;    ai     aj     ak funct         c0         c1         c2         c3
+;    ai     aj     ak funct     theta_0    k_theta 
       2      1      3     1   107.5800459 329.699200
       2      1      4     1   107.5800459 329.699200
       2      1      5     1   107.5800459 329.699200
