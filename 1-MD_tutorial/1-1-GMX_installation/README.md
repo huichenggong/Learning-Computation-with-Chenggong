@@ -2,8 +2,7 @@
 ## GMX Version 2021.2  
 ### \# Install pre-request  
 ```diff
-sudo apt install build-essential
-sudo apt install cmake
+sudo apt install build-essential cmake
 ``` 
 ### \# check system  
 ```diff
@@ -47,8 +46,15 @@ cmake ../gromacs-2021.2 \
 #change the INSTALL_PREFIX according to your need
 ```
 ### \# build - test - install
+#### \# build
 ```diff
 make -j 4 #4 cores will be used here, you can use more
+```
+#### \# test
+```diff
 make check
+```
+#### \# Install
+```diff
 make install
 ```

@@ -2,7 +2,7 @@
 ## Ambertools2021 Amber20  
 ### \# Install pre-request  
 ```diff
-sudo apt install bc csh flex xorg-dev zlib1g-dev \
+sudo apt install bc csh flex xorg-dev zlib1g-dev build-essential \
     libbz2-dev patch cmake bison gfortran python
 ``` 
 ### \# Download and Unzip files
