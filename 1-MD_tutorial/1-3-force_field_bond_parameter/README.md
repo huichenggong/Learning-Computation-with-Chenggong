@@ -36,3 +36,4 @@ c1   k<sub>θ</sub> (kJ mol<sup>−1</sup>rad<sup>−2</sup>)
       3      1      5     1   107.5800459 329.699200
       4      1      5     1   107.5800459 329.699200
 ```
+Please check [gromacs manual](https://manual.gromacs.org/documentation/current/reference-manual/topologies/topology-file-formats.html) for more detail.  
