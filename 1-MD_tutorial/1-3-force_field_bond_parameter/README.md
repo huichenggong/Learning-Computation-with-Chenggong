@@ -8,7 +8,7 @@ gmx mdrun -rerun methane.gro -deffnm nvt
 Check the potential energy at the end of the nvt.log file  
     
 ### bond parameter in "methane.top"
-$$V_{bond}=\frac{1}{2} * k_b * (r-b_0)^2$$
+![\Large V_{bond}=\frac{1}{2} * k_b * (r-b_0)^2](https://latex.codecogs.com/svg.latex?\Large&space;V_{bond}=\frac{1}{2}*k_b*(r-b_0)^2)   
 A reminder of the unit    
 c0    b<sub>0</sub> (nm)  
 c1    k<sub>b</sub> (kJ mol<sup>−1</sup>nm<sup>−2</sup>)
@@ -22,7 +22,7 @@ c1    k<sub>b</sub> (kJ mol<sup>−1</sup>nm<sup>−2</sup>)
 ```
     
 ### angle parameter in "methane.top"
-$$V_{bond}=\frac{1}{2} * k_b * (r-b_0)^2$$
+![V_{bond}=\frac{1}{2}*k_b*(r-b_0)^2](https://latex.codecogs.com/svg.latex?\Large&space;V_{bond}=\frac{1}{2}*k_b*(r-b_0)^2)   
 A reminder of the unit  
 c0   θ<sub>0</sub> (deg)  
 c1   k<sub>θ</sub> (kJ mol<sup>−1</sup>rad<sup>−2</sup>)
