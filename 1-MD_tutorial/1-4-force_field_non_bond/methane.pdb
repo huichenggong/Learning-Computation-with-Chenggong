@@ -1,0 +1,11 @@
+TITLE     GROningen MAchine for Chemical Simulation
+REMARK    THIS IS A SIMULATION BOX
+CRYST1   30.000   30.000   30.000  90.00  90.00  90.00 P 1           1
+MODEL        1
+ATOM      1  C1  Met     1       0.000   0.000   0.000  1.00  0.00            
+ATOM      2  H1  Met     1       0.630   0.630   0.630  1.00  0.00            
+ATOM      3  H2  Met     1      -0.630  -0.630   0.630  1.00  0.00            
+ATOM      4  H3  Met     1      -0.630   0.630  -0.630  1.00  0.00            
+ATOM      5  H4  Met     1       0.630  -0.630  -0.630  1.00  0.00            
+TER
+ENDMDL

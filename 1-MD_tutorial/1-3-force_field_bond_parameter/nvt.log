@@ -34,7 +34,7 @@ GROMACS:      gmx mdrun, version 2021.2
 Executable:   /home/cheng/Software/GMX/2021.2-CPU/bin/gmx
 Data prefix:  /home/cheng/Software/GMX/2021.2-CPU
 Working dir:  /home/cheng/Learning-Computation-with-Chenggong/1-MD_tutorial/1-3-force_field_bond_parameter
-Process ID:   702
+Process ID:   259
 Command line:
   gmx mdrun -rerun methane.gro -deffnm nvt
 
@@ -138,7 +138,7 @@ Input Parameters:
    comm-mode                      = Linear
    nstcomm                        = 100
    bd-fric                        = 0
-   ld-seed                        = -571497489
+   ld-seed                        = -1145467046
    emtol                          = 10
    emstep                         = 0.01
    niter                          = 20
@@ -327,7 +327,7 @@ Removing pbc first time
 Note that it is planned that the command gmx mdrun -rerun will be available in a different form in a future version of GROMACS, e.g. gmx rerun -f.
 There are: 5 Atoms
 
-Started mdrun on rank 0 Sun Aug  1 21:09:56 2021
+Started mdrun on rank 0 Mon Aug  2 19:55:48 2021
 
 
 Rerun does not report kinetic energy, total energy, temperature, virial and pressure.
@@ -370,18 +370,21 @@ On 1 MPI rank, each using 8 OpenMP threads
  Computing:          Num   Num      Call    Wall time         Giga-Cycles
                      Ranks Threads  Count      (s)         total sum    %
 -----------------------------------------------------------------------------
- Neighbor search        1    8          1       0.000          0.001   7.4
- Force                  1    8          1       0.000          0.005  45.5
- NB X/F buffer ops.     1    8          1       0.000          0.000   0.7
- Write traj.            1    8          1       0.000          0.000   4.5
- Rest                                           0.000          0.004  41.8
+ Neighbor search        1    8          1       0.000          0.001  12.3
+ Force                  1    8          1       0.000          0.001  19.7
+ NB X/F buffer ops.     1    8          1       0.000          0.000   1.2
+ Write traj.            1    8          1       0.000          0.000   6.6
+ Rest                                           0.000          0.004  60.2
 -----------------------------------------------------------------------------
- Total                                          0.001          0.011 100.0
+ Total                                          0.000          0.007 100.0
 -----------------------------------------------------------------------------
 
+NOTE: 12 % of the run time was spent in pair search,
+      you might want to increase nstlist (this has no effect on accuracy)
+
                Core t (s)   Wall t (s)        (%)
-       Time:        0.004        0.001      768.5
+       Time:        0.003        0.000      754.3
                  (ns/day)    (hour/ns)
-Performance:      310.396        0.077
-Finished mdrun on rank 0 Sun Aug  1 21:09:56 2021
+Performance:      460.467        0.052
+Finished mdrun on rank 0 Mon Aug  2 19:55:48 2021
 
