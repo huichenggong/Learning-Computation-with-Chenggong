@@ -1,0 +1,53 @@
+%chk=C:\Users\cheng\Downloads\jz4.chk
+# opt hf/3-21g geom=connectivity
+
+Title Card Required
+
+0 1
+ C(PDBName=C4,ResName=JZ4,ResNum=167_A)               24.29400000  -24.12400000   -0.07100000
+ C(PDBName=C7,ResName=JZ4,ResNum=167_A)               21.55300000  -27.21400000   -4.11200000
+ C(PDBName=C8,ResName=JZ4,ResNum=167_A)               22.06800000  -26.74700000   -5.33100000
+ C(PDBName=C9,ResName=JZ4,ResNum=167_A)               22.67100000  -25.51200000   -5.44800000
+ C(PDBName=C10,ResName=JZ4,ResNum=167_A)              22.76900000  -24.73000000   -4.29500000
+ C(PDBName=C11,ResName=JZ4,ResNum=167_A)              21.69300000  -26.45900000   -2.95400000
+ C(PDBName=C12,ResName=JZ4,ResNum=167_A)              22.29400000  -25.18700000   -3.07500000
+ C(PDBName=C13,ResName=JZ4,ResNum=167_A)              22.46300000  -24.41400000   -1.80800000
+ C(PDBName=C14,ResName=JZ4,ResNum=167_A)              23.92500000  -24.70400000   -1.39400000
+ O(PDBName=OAB,ResName=JZ4,ResNum=167_A)              23.41200000  -23.53600000   -4.34200000
+ H(PDBName=1H4,ResName=JZ4,ResNum=167_A)              25.19705165  -24.57916001    0.27860990
+ H(PDBName=2H4,ResName=JZ4,ResNum=167_A)              24.44244799  -23.06925478   -0.17286121
+ H(PDBName=3H4,ResName=JZ4,ResNum=167_A)              23.50732059  -24.30733662    0.63072872
+ H(PDBName=H7,ResName=JZ4,ResNum=167_A)               21.04940025  -28.15731735   -4.07405693
+ H(PDBName=H8,ResName=JZ4,ResNum=167_A)               21.99037298  -27.36926217   -6.19798549
+ H(PDBName=H9,ResName=JZ4,ResNum=167_A)               23.04956581  -25.16598679   -6.38707550
+ H(PDBName=H11,ResName=JZ4,ResNum=167_A)              21.35821369  -26.82736445   -2.00683277
+ H(PDBName=1H13,ResName=JZ4,ResNum=167_A)             21.81894539  -24.84442348   -1.06987447
+ H(PDBName=2H13,ResName=JZ4,ResNum=167_A)             22.38646072  -23.37300074   -2.04329189
+ H(PDBName=1H14,ResName=JZ4,ResNum=167_A)             23.99201199  -25.76557496   -1.27794830
+ H(PDBName=2H14,ResName=JZ4,ResNum=167_A)             24.53852657  -24.20480312   -2.11461614
+ H(PDBName=HAB,ResName=JZ4,ResNum=167_A)              23.54566821  -23.20917414   -3.44929755
+
+ 1 9 1.0 11 1.0 12 1.0 13 1.0
+ 2 3 1.5 6 1.5 14 1.0
+ 3 4 2.0 15 1.0
+ 4 5 1.5 16 1.0
+ 5 7 1.5 10 1.0
+ 6 7 1.5 17 1.0
+ 7 8 1.0
+ 8 9 1.0 18 1.0 19 1.0
+ 9 20 1.0 21 1.0
+ 10 22 1.0
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+
+
