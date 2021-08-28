@@ -67,3 +67,8 @@ jz4=loadmol2 jz4.mol2
 loadamberparams jz4.frcmod
 saveamberparm jz4 test.prmtop test.rst7
 ```
+
+## acpype for converting amber to gromacs
+```
+acpype -p test.prmtop -x test.rst7
+```

@@ -1,5 +1,7 @@
-%chk=C:\Users\cheng\Downloads\jz4.chk
-# opt hf/3-21g geom=connectivity
+%nprocshared=6
+%mem=10GB
+%chk=jz4.chk
+# opt b3lyp/6-31g(d) scrf=(smd,solvent=water) nosymm pop=mk geom=connectivity iop(6/33=2,6/42=6)
 
 Title Card Required
 
