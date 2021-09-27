@@ -1,4 +1,4 @@
-define= -DPOSRES -DPOSRES_LIG -DPOSRES_PRO_FC=500 -DPOSRES_LIG_FC=500
+define= -DPOSRES_PRO -DPOSRES_LIG -DPOSRES_PRO_FC=500 -DPOSRES_LIG_FC=500
 ; Run parameters
 integrator              = md        ; leap-frog integrator
 nsteps                  = 50000     ; 2 * 5000 = 100 ps

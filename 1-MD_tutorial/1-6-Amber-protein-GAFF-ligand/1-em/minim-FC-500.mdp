@@ -1,4 +1,4 @@
-define= -DPOSRES -DPOSRES_LIG -DPOSRES_PRO_FC=100 -DPOSRES_LIG_FC=100
+define= -DPOSRES_PRO -DPOSRES_LIG -DPOSRES_PRO_FC=500 -DPOSRES_LIG_FC=500
 ; Parameters describing what to do, when to stop and what to save
 integrator  = steep         ; Algorithm (steep = steepest descent minimization)
 emtol       = 1000.0        ; Stop minimization when the maximum force < 1000.0 kJ/mol/nm

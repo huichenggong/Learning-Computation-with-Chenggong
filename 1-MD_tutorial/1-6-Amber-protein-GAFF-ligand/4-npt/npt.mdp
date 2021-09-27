@@ -1,4 +1,4 @@
-define= -DPOSRES -DPOSRES_LIG -DPOSRES_PRO_FC=100 -DPOSRES_LIG_FC=100
+define= -DPOSRES_PRO -DPOSRES_LIG -DPOSRES_PRO_FC=100 -DPOSRES_LIG_FC=100
 ; RUN CONTROL PARAMETERS
 integrator               = md
 nsteps                  = 500000    ; 1000 ps
