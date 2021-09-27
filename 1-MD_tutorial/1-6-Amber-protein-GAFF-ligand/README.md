@@ -7,8 +7,8 @@ gmx pdb2gmx -f 3HTB_clean_pro.pdb -o 3HTB_01.gro
 
 ## complex
 ```
-gmx editconf -f TOP/3HTB_02_complex.gro -o 3HTB_03_solv.gro -bt dodecahedron -d 1.0
-gmx solvate -cp 3HTB_03_solv.gro -cs spc216.gro -p TOP/topol.top -o 3HTB_04_solv.gro
+gmx editconf -f TOP/3HTB_02_complex.gro -o 3HTB_03_box.gro -bt dodecahedron -d 1.0
+gmx solvate -cp 3HTB_03_box.gro -cs spc216.gro -p TOP/topol.top -o 3HTB_04_solv.gro
 gmx grompp -f 1-em/minim-NoRes.mdp -c 3HTB_04_solv.gro -p TOP/topol.top -o ions -maxwarn 1
 gmx genion -s ions.tpr -o 3HTB_05_ion.gro -p TOP/topol.top -pname NA -nname CL -neutral
 ```
