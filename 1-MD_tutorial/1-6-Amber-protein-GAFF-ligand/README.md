@@ -14,9 +14,9 @@ gmx genion -s ions.tpr -o 3HTB_05_ion.gro -p TOP/topol.top -pname NA -nname CL -
 ```
 # MD run
 ## Minimization
-1. minimization with 500 kJ/(mol*A^2) restrain  
+1. minimization with 500 kJ/(mol*nm^2) restrain  
 ```
-gmx grompp -f minim-FC-500.mdp -c ../3HTB_05_ion.gro -r ../3HTB_05_ion.gro  -p ../TOP/topol.top -o em1.tpr
+gmx grompp -f minim-FC-500.mdp -c ../3HTB_05_ions.gro -r ../3HTB_05_ions.gro  -p ../TOP/topol.top -o em1.tpr
 gmx mdrun -v -deffnm em1
 gmx energy -f em1.edr -o em1_potential.xvg
 ```
@@ -28,7 +28,7 @@ gmx mdrun -v -deffnm em2
 ```
 
 ## nvt
-1. nvt 100ps with 500 kJ/(mol*A^2) restrain  
+1. nvt 100ps with 500 kJ/(mol*nm^2) restrain  
 ```
 gmx grompp -f nvt.mdp -c ../1-em/em2.gro -r ../1-em/em2.gro -p ../TOP/topol.top -o nvt.tpr
 gmx mdrun -v -deffnm nvt
@@ -38,7 +38,7 @@ gmx mdrun -v -deffnm nvt
 gmx energy -f nvt.edr -o temperature.xvg
 ```
 ## NPT1
-1. npt with 500 kJ/(mol*A^2) restrain
+1. npt with 500 kJ/(mol*nm^2) restrain
 ```
 gmx grompp -f npt.mdp -c ../2-nvt/nvt.gro -r ../1-em/em2.gro -t ../2-nvt/nvt.cpt -p ../TOP/topol.top -o npt.tpr
 gmx mdrun -v -deffnm npt
