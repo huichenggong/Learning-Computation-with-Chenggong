@@ -1,0 +1,193 @@
+define                   = -DFLEXIBLE
+;----------------------------------------------------
+; RUN CONTROL
+;----------------------------------------------------
+; RUN CONTROL PARAMETERS
+integrator               = steep
+; Start time and timestep in ps
+tinit                    = 0
+dt                       = 0.001
+nsteps                   = 3000
+; ENERGY MINIMIZATION OPTIONS
+; Force tolerance and initial step-size
+emtol                    = 1000
+emstep                   = 0.05
+; Max number of iterations in relax-shells
+niter                    = 20
+; Step size (ps^2) for minimization of flexible constraints
+fcstep                   = 0
+; Frequency of steepest descents steps when doing CG
+nstcgsteep               = 1000
+nbfgscorr                = 10
+
+; mode for center of mass motion removal
+comm-mode                = Linear
+; number of steps for center of mass motion removal
+nstcomm                  = 100
+nstcalcenergy		 = 100
+nstdhdl			 = 100
+; group(s) for center of mass motion removal
+comm-grps                = 
+
+
+
+
+
+; OUTPUT CONTROL OPTIONS
+; Output frequency for coords (x), velocities (v) and forces (f)
+nstxout                  = 0
+nstvout                  = 0
+nstfout                  = 0
+; Output frequency for energies to log file and energy file
+nstlog                   = 10000
+nstenergy                = 1000000
+; Output frequency and precision for xtc file
+nstxout-compressed       = 50000
+compressed-x-precision   = 1000
+; This selects the subset of atoms for the xtc file. You can
+; select multiple groups. By default all atoms will be written.
+xtc-grps                 = 
+; Selection of energy groups
+energygrps               = 
+
+; NEIGHBORSEARCHING PARAMETERS
+; nblist update frequency
+cutoff-scheme = verlet
+verlet-buffer-tolerance = 0.00001
+nstlist                  = 10
+
+; Periodic boundary conditions: xyz (default), no (vacuum)
+; or full (infinite systems only)
+pbc                      = xyz
+; nblist cut-off        
+rlist                    = 1.2
+
+; OPTIONS FOR ELECTROSTATICS AND VDW
+; Method for doing electrostatics
+coulombtype              = PME
+rcoulomb-switch          = 0
+rcoulomb                 = 1.1
+; Dielectric constant (DC) for cut-off or DC of reaction field
+epsilon-r                = 1
+; Method for doing Van der Waals
+vdwtype=Cut-off
+vdw_modifier=Potential-switch
+; cut-off lengths       
+rvdw-switch              = 1.0
+rvdw                     = 1.1
+; Apply long range dispersion corrections for Energy and Pressure
+DispCorr                 = EnerPres
+; Extension of the potential lookup tables beyond the cut-off
+table-extension          = 1
+; Spacing for the PME/PPPM FFT grid
+fourierspacing           = 0.12
+; FFT grid size, when a value is 0 fourierspacing will be used
+fourier_nx               = 0
+fourier_ny               = 0
+fourier_nz               = 0
+; EWALD/PME/PPPM parameters
+pme_order                = 4
+ewald_rtol               = 1e-05
+ewald_geometry           = 3d
+epsilon_surface          = 0
+
+
+
+
+
+
+
+; OPTIONS FOR BONDS    
+constraints              = h-bonds
+; Type of constraint algorithm
+constraint-algorithm     = Lincs
+continuation             = yes
+; Use successive overrelaxation to reduce the number of shake iterations
+Shake-SOR                = no
+; Relative tolerance of shake
+shake-tol                = 1e-04
+; Highest order in the expansion of the constraint coupling matrix
+lincs-order              = 4
+; Number of iterations in the final step of LINCS. 1 is fine for
+; normal simulations, but use 2 to conserve energy in NVE runs.
+; For energy minimization with constraints it should be 4 to 8.
+lincs-iter               = 2
+; Lincs will write a warning to the stderr if in one step a bond
+; rotates over more degrees than
+lincs-warnangle          = 30
+; Convert harmonic bonds to morse potentials
+morse                    = no
+
+; ENERGY GROUP EXCLUSIONS
+; Pairs of energy groups for which all non-bonded interactions are excluded
+energygrp_excl           = 
+
+; NMR refinement stuff 
+; Distance restraints type: No, Simple or Ensemble
+disre                    = No
+; Force weighting of pairs in one distance restraint: Conservative or Equal
+disre-weighting          = Equal
+; Use sqrt of the time averaged times the instantaneous violation
+disre-mixed              = no
+disre-fc                 = 1000
+disre-tau                = 0
+; Output frequency for pair distances to energy file
+nstdisreout              = 100
+; Orientation restraints: No or Yes
+orire                    = no
+; Orientation restraints force constant and tau for time averaging
+orire-fc                 = 0
+orire-tau                = 0
+orire-fitgrp             = 
+
+
+; Free energy control stuff
+free-energy              = yes
+;init-lambda              = 0
+;delta-lambda             = 4e-7
+
+;init-lambda-state   0    1    2    3    4    5    6    7    8    9    10   11   12   13   14   15   16   17   18   19   20
+coul-lambdas      = 0.0  0.05 0.1  0.15 0.2  0.25 0.3  0.35 0.4  0.45 0.5  0.55 0.6  0.65 0.7  0.75 0.8  0.85 0.9  0.95 1.0
+vdw-lambdas       = 0.0  0.05 0.1  0.15 0.2  0.25 0.3  0.35 0.4  0.45 0.5  0.55 0.6  0.65 0.7  0.75 0.8  0.85 0.9  0.95 1.0
+bonded-lambdas    = 0.0  0.05 0.1  0.15 0.2  0.25 0.3  0.35 0.4  0.45 0.5  0.55 0.6  0.65 0.7  0.75 0.8  0.85 0.9  0.95 1.0
+
+calc-lambda-neighbors = -1
+
+sc-alpha                 = 0.3
+sc-sigma                 = 0.25
+sc-power                 = 1
+sc-coul = yes
+;alpha_Q = 0.3
+;sigma_Q = 1.0
+
+refcoord-scaling = all
+
+
+; Non-equilibrium MD stuff
+acc-grps                 = 
+accelerate               = 
+freezegrps               = ;FREEZE
+freezedim                = ;Y Y Y
+cos-acceleration         = 0
+
+; Electric fields      
+; Format is number of terms (int) and for all terms an amplitude (real)
+; and a phase angle (real)
+E-x                      = 
+E-xt                     = 
+E-y                      = 
+E-yt                     = 
+E-z                      = 
+E-zt                     = 
+
+; User defined thingies
+user1-grps               = 
+user2-grps               = 
+userint1                 = 0
+userint2                 = 0
+userint3                 = 0
+userint4                 = 0
+userreal1                = 0
+userreal2                = 0
+userreal3                = 0
+userreal4                = 0
