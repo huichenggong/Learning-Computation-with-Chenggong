@@ -1,0 +1,62 @@
+;
+;	File 'topol.top' was generated
+;	By user: cheng (1000)
+;	On host: cheng-2060
+;	At date: Mon Nov  1 13:36:15 2021
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	                    :-) GROMACS - gmx pdb2gmx, 2021.3 (-:
+;	
+;	Executable:   /home/cheng/Software/GMX/2021.3-gcc9.3.0-cuda11.2/bin/gmx
+;	Data prefix:  /home/cheng/Software/GMX/2021.3-gcc9.3.0-cuda11.2
+;	Working dir:  /home/cheng/Learning-Computation-with-Chenggong/CC_news_008_ddG_uniFEP/GMX/pro
+;	Command line:
+;	  gmx pdb2gmx -f ../2zff_02_tleap.pdb -o 2zff_03_pdb2gmx.pdb -ignh
+;	Force field was read from current directory or a relative path - path added.
+;
+
+; Include forcefield parameters
+#include "./amber14sb_parmbsc1.ff/forcefield.itp"
+; additional atom type
+#include "../ligand/ffMOL_dum.itp"
+
+; Include chain topologies
+#include "topol_Protein.itp"
+#include "topol_Protein2.itp"
+#include "topol_Protein3.itp"
+
+; Include water topology
+#include "./amber14sb_parmbsc1.ff/tip3p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+; Include topology for ions
+#include "./amber14sb_parmbsc1.ff/ions.itp"
+
+#include "../ligand/MOL.itp"
+#ifdef POSRES_LIG
+#include "posre_lig.itp"
+#endif
+
+[ system ]
+; Name
+Protein in water
+
+[ molecules ]
+; Compound        #mols
+Protein             1
+Protein2            1
+Protein3            1
+51U              1
+NA               2
+SOL         9810
+NA               27
+CL               28
+
