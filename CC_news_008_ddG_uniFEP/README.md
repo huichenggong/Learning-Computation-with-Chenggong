@@ -24,12 +24,15 @@ fetch 2ZF0, type=pdb
 set retain_order, 1
 set cartoon_transparency, 0.5
 ```
-
+protonation state?  
+http://www.cheminfo.org/Chemistry/Cheminformatics/FormatConverter/index.html  
+https://xundrug.cn/molgpka  
+https://pubs.acs.org/doi/10.1021/acs.jcim.1c00075  
 ligand 5  
 ```
 grep 53U ../../2zff.pdb  | grep -v ANISOU > lig.pdb
 # add H by GView
-antechamber -i lig_H.pdb -fi pdb  -o lig_H.mol2 -fo mol2 -c bcc -nc 0
+antechamber -i lig_H.pdb -fi pdb  -o lig_H.mol2 -fo mol2 -c bcc -nc 1
 parmchk2 -i lig_H.mol2 -f mol2 -o lig_H.frcmod
 tleap -f ../tleap.in
 acpype -p MOL.prmtop -x MOL.rst7
@@ -39,7 +42,7 @@ ligand 3a
 ```
 grep 51U ../../2zf0.pdb > lig.pdb
 # add H by GView
-antechamber -i lig_H.pdb -fi pdb  -o lig_H.mol2 -fo mol2 -c bcc -nc 0
+antechamber -i lig_H.pdb -fi pdb  -o lig_H.mol2 -fo mol2 -c bcc -nc 1
 parmchk2 -i lig_H.mol2 -f mol2 -o lig_H.frcmod
 tleap -f ../tleap.in
 acpype -p MOL.prmtop -x MOL.rst7
@@ -59,21 +62,23 @@ make_hybrid.py \
   -oitp MOL.itp \
   -ffitp ffmerged.itp \
   -scDUMd 0.0
+# merge all the atomtype together
 one_ff_file.py -ffitp ffmerged.itp ffMOL.itp -ffitp_out ffMOL_dum.itp
 ```
 wat
 ```
-gmx editconf -f ../ligand/merged.pdb -o 01_box.gro -bt dodecahedron -d 1.17 
+gmx editconf -f ../ligand/merged.pdb -o 01_box.gro -bt dodecahedron -d 2.00
 gmx solvate -cp 01_box.gro -cs spc216.gro -p topol.top -o 02_solv.gro 
-gmx grompp -f em.mdp -c 02_solv.gro  -p topol.top -o 03_ion
-gmx genion -s 03_ion.tpr  -o 04_ion_added.gro -p topol.top  -pname NA -nname CL -np 3 -nn 3
+gmx grompp -f em.mdp -c 02_solv.gro  -p topol.top -o 03_ion -maxwarn 1
+gmx genion -s 03_ion.tpr  -o 04_ion_added.gro -p topol.top  -pname NA -nname CL -np 9 -nn 10
 ```
 pro
 ```
 gmx pdb2gmx -f ../2zff_02_tleap.pdb -o 2zff_03_pdb2gmx.pdb -ignh
+#copy paste the merge.pdb to the end of 2zff_04_complex.pdb
 gmx editconf -f 2zff_04_complex.pdb -o 05_box.gro -bt dodecahedron -d 1.1
 gmx solvate -cp 05_box.gro -cs spc216.gro -p topol.top -o 06_solv.gro
-gmx grompp -f ../wat/em.mdp -c 06_solv.gro -o 07_ions
-gmx genion -s 07_ions.tpr -o 08_ion.pdb -p topol.top -pname NA -nname CL -nn 27 -np 27
+gmx grompp -f ../wat/em.mdp -c 06_solv.gro -o 07_ions -maxwarn 1
+gmx genion -s 07_ions.tpr -o 08_ion.pdb -p topol.top -pname NA -nname CL -np 27 -nn 28 
 ```
 ## 2.uniFEP with the default setting

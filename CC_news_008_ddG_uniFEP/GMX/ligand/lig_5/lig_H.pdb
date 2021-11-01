@@ -1,0 +1,107 @@
+REMARK   1 File created by GaussView 6.0.16
+HETATM    1  N1  53U H2001      16.390 -15.783  23.160                       N
+HETATM    2  C2  53U H2001      17.657 -15.012  23.146                       C
+HETATM    3  C3  53U H2001      17.436 -13.631  22.568                       C
+HETATM    4  O1  53U H2001      16.506 -12.945  23.032                       O
+HETATM    5  C1  53U H2001      18.172 -14.917  24.595                       C
+HETATM    6  C16 53U H2001      19.592 -14.371  24.744                       C
+HETATM    7  C17 53U H2001      20.691 -14.964  24.089                       C
+HETATM    8  C21 53U H2001      19.822 -13.249  25.551                       C
+HETATM    9  C18 53U H2001      21.986 -14.454  24.235                       C
+HETATM   10  C20 53U H2001      21.101 -12.741  25.697                       C
+HETATM   11  C19 53U H2001      22.189 -13.333  25.046                       C
+HETATM   12  N2  53U H2001      18.245 -13.171  21.589                       N
+HETATM   13  C7  53U H2001      18.028 -11.822  21.062                       C
+HETATM   14  C8  53U H2001      16.609 -11.729  20.528                       C
+HETATM   15  O2  53U H2001      16.215 -12.728  19.926                       O
+HETATM   16  C6  53U H2001      18.944 -11.895  19.803                       C
+HETATM   17  C5  53U H2001      20.104 -12.767  20.317                       C
+HETATM   18  C4  53U H2001      19.376 -13.939  21.023                       C
+HETATM   19  N3  53U H2001      15.971 -10.576  20.754                       N
+HETATM   20  C9  53U H2001      14.659 -10.430  20.113                       C
+HETATM   21  C10 53U H2001      13.567 -10.492  21.190                       C
+HETATM   22  C11 53U H2001      13.386  -9.397  22.037                       C
+HETATM   23  C12 53U H2001      12.402  -9.443  23.015                       C
+HETATM   24  C13 53U H2001      11.589 -10.567  23.164                       C
+HETATM   25  C14 53U H2001      11.779 -11.663  22.309                       C
+HETATM   26  C15 53U H2001      12.770 -11.613  21.327                       C
+HETATM   27 1H1  53U H2001      18.213 -15.925  24.952                       H
+HETATM   28 2H1  53U H2001      17.538 -14.204  25.079                       H
+HETATM   29  H21 53U H2001      19.003 -12.782  26.058                       H
+HETATM   30  H17 53U H2001      20.532 -15.821  23.468                       H
+HETATM   31  H20 53U H2001      21.260 -11.883  26.317                       H
+HETATM   32  H18 53U H2001      22.810 -14.916  23.733                       H
+HETATM   33  H19 53U H2001      23.172 -12.930  25.168                       H
+HETATM   34  H2  53U H2001      18.380 -15.505  22.530                       H
+HETATM   35 1H1  53U H2001      16.488 -16.575  23.763                       H
+HETATM   36 2H1  53U H2001      15.649 -15.200  23.493                       H
+HETATM   37 3H1  53U H2001      16.179 -16.094  22.233                       H
+HETATM   38 1H6  53U H2001      19.321 -10.914  19.602                       H
+HETATM   39 2H6  53U H2001      18.426 -12.436  19.039                       H
+HETATM   40 1H5  53U H2001      20.635 -12.210  21.060                       H
+HETATM   41 2H5  53U H2001      20.625 -13.161  19.469                       H
+HETATM   42 1H4  53U H2001      19.004 -14.617  20.284                       H
+HETATM   43 2H4  53U H2001      19.988 -14.302  21.822                       H
+HETATM   44  H7  53U H2001      18.201 -11.030  21.760                       H
+HETATM   45 1H9  53U H2001      14.524 -11.285  19.484                       H
+HETATM   46 2H9  53U H2001      14.626  -9.446  19.693                       H
+HETATM   47  H11 53U H2001      14.002  -8.528  21.933                       H
+HETATM   48  H12 53U H2001      12.265  -8.604  23.664                       H
+HETATM   49  H13 53U H2001      10.832 -10.593  23.919                       H
+HETATM   50  H14 53U H2001      11.166 -12.534  22.409                       H
+HETATM   51  H15 53U H2001      12.914 -12.449  20.675                       H
+HETATM   52  H   53U H2001      16.364  -9.856  21.326                       H
+TER
+END
+CONECT    1    2   35   36   37
+CONECT    2    1    3    5   34
+CONECT    3    2   12    4
+CONECT    4    3
+CONECT    5    2    6   27   28
+CONECT    6    5    8    7
+CONECT    7    6    9   30
+CONECT    8    6   10   29
+CONECT    9    7   11   32
+CONECT   10    8   11   31
+CONECT   11    9   10   33
+CONECT   12    3   18   13
+CONECT   13   12   14   16   44
+CONECT   14   13   15   19
+CONECT   15   14
+CONECT   16   13   17   38   39
+CONECT   17   16   18   40   41
+CONECT   18   12   17   42   43
+CONECT   19   14   20   52
+CONECT   20   19   21   45   46
+CONECT   21   20   22   26
+CONECT   22   21   23   47
+CONECT   23   22   24   48
+CONECT   24   23   25   49
+CONECT   25   24   26   50
+CONECT   26   21   25   51
+CONECT   27    5
+CONECT   28    5
+CONECT   29    8
+CONECT   30    7
+CONECT   31   10
+CONECT   32    9
+CONECT   33   11
+CONECT   34    2
+CONECT   35    1
+CONECT   36    1
+CONECT   37    1
+CONECT   38   16
+CONECT   39   16
+CONECT   40   17
+CONECT   41   17
+CONECT   42   18
+CONECT   43   18
+CONECT   44   13
+CONECT   45   20
+CONECT   46   20
+CONECT   47   22
+CONECT   48   23
+CONECT   49   24
+CONECT   50   25
+CONECT   51   26
+CONECT   52   19

@@ -1,0 +1,7 @@
+source leaprc.gaff
+MOL=loadmol2 lig_H.mol2
+loadamberparams lig_H.frcmod
+saveamberparm MOL MOL.prmtop MOL.rst7
+savepdb MOL MOL_tleap.pdb
+quit
+
