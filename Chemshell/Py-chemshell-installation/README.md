@@ -13,5 +13,6 @@ sudo apt install libblas-dev liblapack-dev python3-dev python3-pip
 ```
 # 5. Compile
 ```bash
+cd chemsh-py-21.0.1/
 ./setup --fc gfortran --cc gcc
 ```
