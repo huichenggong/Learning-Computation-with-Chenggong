@@ -1,5 +1,7 @@
 # 1. Register on chemshell wesite  
+https://www.chemshell.org/
 # 2. Download the package
+https://www.chemshell.org/download "Access denied" without login
 # 3. Extract (unzip) .tar.gz
 ```bash
 tar -xvzf chemsh-py-21.0.1.tar_0.gz
