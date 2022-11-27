@@ -1,0 +1,124 @@
+
+; RUN CONTROL PARAMETERS
+integrator               = md
+; Start time and timestep in ps
+tinit                    = 0
+dt                       = 0.002
+nsteps                   = 500000000 ; 1000ns
+; For exact run continuation or redoing part of a run
+init_step                = 0
+; Part index is updated automatically on checkpointing (keeps files separate)
+simulation_part          = 1
+; mode for center of mass motion removal
+; energy calculation and T/P-coupling frequency
+nstcalcenergy            = 100
+comm-mode                = Linear
+; number of steps for center of mass motion removal
+nstcomm                  = 200
+; group(s) for center of mass motion removal
+comm-grps                = System
+
+
+
+
+
+
+
+; OUTPUT CONTROL OPTIONS
+; Output frequency for coords (x), velocities (v) and forces (f)
+nstxout                  = 0
+nstvout                  = 0
+nstfout                  = 0
+; Output frequency for energies to log file and energy file
+nstlog                   = 10000
+nstenergy                = 10000
+; Output frequency and precision for xtc file
+nstxtcout                = 25000 ; 50ps, 1e3=2ps, 1e4=20ps
+xtc-precision            = 1000
+; This selects the subset of atoms for the xtc file. You can
+; select multiple groups. By default all atoms will be written.
+xtc-grps                 = 
+; Selection of energy groups
+energygrps               = 
+
+; NEIGHBORSEARCHING PARAMETERS
+; nblist update frequency
+
+nstlist                  = 200
+; ns algorithm (simple or grid)
+ns-type                  = Grid
+; Periodic boundary conditions: xyz, no, xy
+pbc                      = xyz
+periodic_molecules       = no
+; nblist cut-off        
+rlist                    = 1.0
+; long-range cut-off for switched potentials
+rlistlong                = -1
+cutoff-scheme            = Verlet
+
+; OPTIONS FOR ELECTROSTATICS AND VDW
+; Method for doing electrostatics
+coulombtype              = pme
+rcoulomb-switch          = 0
+rcoulomb                 = 1.0
+; Relative dielectric constant for the medium and the reaction field
+epsilon_r                = 1
+epsilon_rf               = 1
+; Method for doing Van der Waals
+vdwtype                  = cutoff
+; cut-off lengths       
+rvdw-switch              = 0
+rvdw                     = 1.0
+; Apply long range dispersion corrections for Energy and Pressure
+DispCorr                 = EnerPres
+; Extension of the potential lookup tables beyond the cut-off
+table-extension          = 1
+; Seperate tables between energy group pairs
+energygrp_table          = 
+; Spacing for the PME/PPPM FFT grid
+fourierspacing           = 0.12
+; FFT grid size, when a value is 0 fourierspacing will be used
+fourier_nx               = 0
+fourier_ny               = 0
+fourier_nz               = 0
+; EWALD/PME/PPPM parameters
+pme_order                = 4
+ewald_rtol               = 1e-05
+ewald_geometry           = 3d
+epsilon_surface          = 0
+optimize_fft             = no
+
+
+
+; OPTIONS FOR WEAK COUPLING ALGORITHMS
+; Temperature coupling  
+Tcoupl                   = v-rescale
+nh-chain-length          = 5
+; Groups to couple separately
+tc-grps                  = System
+; Time constant (ps) and reference temperature (K)
+tau-t                    = 1.0
+;ref-t                    = 310
+; Pressure coupling     
+pcoupl                   = parrinello-rahman
+pcoupltype               = semiisotropic
+; Time constant (ps), compressibility (1/bar) and reference P (bar)
+tau-p                    = 10.0
+compressibility          = 4.5e-5 4.5e-5
+ref-p                    = 1.0    1.0   
+; Scaling of reference coordinates, No, All or COM
+refcoord_scaling         = All
+
+
+; GENERATE VELOCITIES FOR STARTUP RUN
+gen-vel                  = no
+;gen-temp                 = 310
+
+; OPTIONS FOR BONDS    
+constraints              = h-bonds
+; Type of constraint algorithm
+constraint-algorithm     = Lincs
+; Do not constrain the start configuration
+continuation             = yes
+
+
