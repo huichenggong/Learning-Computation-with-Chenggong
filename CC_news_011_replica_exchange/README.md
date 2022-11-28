@@ -1,5 +1,5 @@
 # boltzmann distribution
-$$p_i=\frac{exp(-\varepsilon^i/kT)}{\sum_{j}^{M}exp(-\varepsilon_j/kT)}
+$$p_i=\frac{exp(-\varepsilon^i/kT)}{\sum^{M}_{j}exp(-\varepsilon_j/kT)}
 =\frac{exp(-\varepsilon^i/kT)}{Q_T}
 $$
 
