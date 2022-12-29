@@ -2,6 +2,12 @@
 import numpy as np
 import pandas as pd
 
+def double_well_energy_force(x, k, a, k2):
+    # calculate the energy and force
+
+    energy = 0.25 * k * ((x - a) ** 2) * ((x + a) ** 2) + k2 * x
+    force = -k * x * (x - a) * (x + a) - k2 # -dE/dx
+    return energy, force
 
 # this is step A
 def position_update(x, v, dt):
@@ -32,8 +38,6 @@ def baoab(potential, max_steps, dt, gamma, kBT, initial_position, initial_veloci
     positions = []
     velocities = []
     potential_energies = []
-    kinetic_energies = []
-    total_energies = []
     save_times = []
 
     while (step_number <= max_steps):
@@ -62,8 +66,6 @@ def baoab(potential, max_steps, dt, gamma, kBT, initial_position, initial_veloci
             positions.append(x)
             velocities.append(v)
             potential_energies.append(potential_E)
-            kinetic_energies.append(kinetic)
-            total_energies.append(e_total)
             save_times.append(t)
 
         t = t + dt
@@ -72,8 +74,6 @@ def baoab(potential, max_steps, dt, gamma, kBT, initial_position, initial_veloci
     save_times = np.array(save_times, dtype=np.single)
     positions = np.array(positions, dtype=np.single)
     velocities = np.array(velocities, dtype=np.single)
-    total_energies = np.array(total_energies, dtype=np.single)
-    kinetic_energies = np.array(kinetic_energies, dtype=np.single)
     potential_energies = np.array(potential_energies, dtype=np.single)
 
-    return save_times, positions, velocities, total_energies, kinetic_energies, potential_energies
+    return save_times, positions, velocities, potential_energies
