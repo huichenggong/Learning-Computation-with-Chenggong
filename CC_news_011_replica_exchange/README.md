@@ -28,3 +28,12 @@ P(1 \leftrightarrow 2)=\min\left(1,\exp\left[\left(\frac{1}{k_B T_1} - \frac{1}{
 $$  
 
 [Gromacs Manual](https://manual.gromacs.org/current/reference-manual/algorithms/replica-exchange.html)
+
+```bash
+mpirun -np 6 gmx_mpi mdrun  \
+  -multidir rep_0 rep_1  rep_2  rep_3  rep_4  rep_5  \
+  -s md.tpr \
+  -deffnm md \
+  -replex 500 
+
+```
