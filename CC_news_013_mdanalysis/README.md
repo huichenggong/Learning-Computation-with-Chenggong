@@ -30,6 +30,49 @@ make
 ```
 
 ### 1.X Remove conda environment
+After all the tesing, if you don't want to keep those conda environment, do this.
 ```bash
 conda remove -n Name_of_Env --all  # You need to deactivate before removing
+```
+
+## 2 Speed test
+I only uploaded a short trajectory.
+```bash
+cd data/
+mv fix_atom_c_40ps_short.xtc fix_atom_c_40ps.xtc
+cd ../speed_test_distance/
+./run_all.sh
+```
+Here is my test result with longer trajectory.
+```
+# mdtraj
+
+real	0m27.473s
+user	0m26.748s
+sys	0m1.519s
+
+# mdanalysis
+
+real	0m16.301s
+user	0m16.202s
+sys	0m0.891s
+
+# pytraj
+
+real	0m15.856s
+user	0m15.644s
+sys	0m0.212s
+
+# gmx distance
+
+real	0m23.892s
+user	0m23.755s
+sys	0m0.136s
+
+# gmxlib cpp
+
+real	0m15.320s
+user	0m15.159s
+sys	0m0.160s
+
 ```
