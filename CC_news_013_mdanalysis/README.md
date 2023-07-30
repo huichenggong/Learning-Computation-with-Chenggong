@@ -24,7 +24,7 @@ source ~/Software/GMX/2022.5-cuda11.7-gcc11/bin/GMXRC
 # This is where you installed gromacs.
 
 cmake  ../ -DGROMACS_SRC_DIR=/home/cheng/Software/Package/GMX/2022.5/gromacs-2022.5
-# This is the gromacs source code folder you downloaded.
+# This is the gromacs source code folder that you downloaded from GMX website.
 
 make
 ```
