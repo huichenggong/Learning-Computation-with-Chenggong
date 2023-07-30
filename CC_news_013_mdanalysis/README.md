@@ -44,35 +44,5 @@ cd ../speed_test_distance/
 ./run_all.sh
 ```
 Here is my test result with longer trajectory.
-```
-# mdtraj
 
-real	0m27.473s
-user	0m26.748s
-sys	0m1.519s
-
-# mdanalysis
-
-real	0m16.301s
-user	0m16.202s
-sys	0m0.891s
-
-# pytraj
-
-real	0m15.856s
-user	0m15.644s
-sys	0m0.212s
-
-# gmx distance
-
-real	0m23.892s
-user	0m23.755s
-sys	0m0.136s
-
-# gmxlib cpp
-
-real	0m15.320s
-user	0m15.159s
-sys	0m0.160s
-
-```
+![Exe_time](./01-exe_time.png)
