@@ -43,3 +43,7 @@
 
 </table>
 
+# 2. Potential Energy Zero Point Error
+![linear repationship](linear.png)  
+y axis is the delta deprotonation potential energy (QM_deprotonation - MM_deprotonation)  
+x axis is the deprotonation free energy error between the experiment and Charmm36m  
