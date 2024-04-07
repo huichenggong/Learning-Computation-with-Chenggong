@@ -1,0 +1,42 @@
+source leaprc.protein.ff14SB
+
+# Aspartic
+pep = sequence { ACE ALA ASP ALA NHE }
+savepdb pep ASP.pdb
+
+pep = sequence { ACE ALA ASH ALA NHE }
+savepdb pep ASH.pdb
+
+# Glutamic
+pep = sequence { ACE ALA GLU ALA NHE }
+savepdb pep GLU.pdb
+
+pep = sequence { ACE ALA GLH ALA NHE }
+savepdb pep GLH.pdb
+
+# Cysteine
+pep = sequence { ACE ALA CYS ALA NHE }
+savepdb pep CYS.pdb
+
+pep = sequence { ACE ALA CYM ALA NHE }
+savepdb pep CYM.pdb
+
+# Histidine
+pep = sequence { ACE ALA HID ALA NHE }
+savepdb pep HID.pdb
+
+pep = sequence { ACE ALA HIE ALA NHE }
+savepdb pep HIE.pdb
+
+pep = sequence { ACE ALA HIP ALA NHE }
+savepdb pep HIP.pdb
+
+# Lysine
+pep = sequence { ACE ALA LYN ALA NHE }
+savepdb pep LYN.pdb
+
+pep = sequence { ACE ALA LYS ALA NHE }
+savepdb pep LYS.pdb
+
+
+quit
