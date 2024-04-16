@@ -1,16 +1,17 @@
 #!/bin/bash
 
+export GMXLIB="$HOME/Downloads/pmx/src/pmx/data/mutff/"
+
 # check if charmm36-jul202X.ff exists
-if [ ! -d ./charmm36-jul2022.ff ]; then
-    echo "charmm36-jul2022.ff does not exist"
-    echo "Go to http://mackerell.umaryland.edu/charmm_ff.shtml and download the charmm36-jul2022.ff"
+if [ ! -d $GMXLIB/charmm36m-mut.ff ]; then
+    echo "charmm36m-mut.ff does not exist"
+    echo "Please download pmx from github"
+    echo " and set the GMXLIB pointing to the pmx/src/pmx/data/mutff/ directory in the script."
     echo "This script will exit from here."
     exit 1
 fi
 
-
-
-
+# residues which has the same name in AMBER and Charmm
 for res in ASP ASH GLU GLH CYS CYM HID HIE HIP LYN LYS
 do
     cp ../amber14sb/$res.pdb ./$res-in.pdb
@@ -18,15 +19,6 @@ do
     sed -i '/N   NHE/d' $res-in.pdb
     sed -i '/HN1 NHE/d' $res-in.pdb
     sed -i '/HN2 NHE/d' $res-in.pdb
-done
-
-
-# residues which has the same name in AMBER and Charmm
-for res in ASP GLU CYS CYM LYS
-do
-    # those terminus indexes only work for charmm36-jul2022, we select None for ACE and CT2 for NH2
-    echo -e "8\n2" | gmx pdb2gmx -f $res-in.pdb  -o $res.pdb -ignh -ter -ff charmm36-jul2022 -water tip3p
-    # echo -e "6\n3" | gmx pdb2gmx -f $res-in.pdb  -o $res.pdb -ignh -ter -ff charmm36-jul2021 -water tip3p
 done
 
 # residues which has different name in AMBER and Charmm
@@ -42,12 +34,15 @@ mv HIP-in.pdb HSP-in.pdb
 sed -i 's/HIP/HSP/g' HSP-in.pdb
 mv LYN-in.pdb LSN-in.pdb
 sed -i 's/LYN/LSN/g' LSN-in.pdb
-for res in ASPP GLUP HSD HSE HSP LSN
+
+for res in ASP GLU CYS CYM LYS ASPP GLUP HSD HSE HSP LSN
 do
-    # those terminus indexes only work for charmm36-jul2022, we select None for ACE and CT2 for NH2
-    echo -e "8\n2" | gmx pdb2gmx -f $res-in.pdb  -o $res.pdb -ignh -ter -ff charmm36-jul2022 -water tip3p
+    # those terminus indexes only work for charmm36m-mut, we select None for ACE and CT2 for NH2
+    echo -e "3\n2" | gmx pdb2gmx -f $res-in.pdb  -o $res.pdb -ignh -ter -ff charmm36m-mut -water tip3p
+    # echo -e "8\n2" | gmx pdb2gmx -f $res-in.pdb  -o $res.pdb -ignh -ter -ff charmm36-jul2022 -water tip3p
     # echo -e "6\n3" | gmx pdb2gmx -f $res-in.pdb  -o $res.pdb -ignh -ter -ff charmm36-jul2021 -water tip3p
 done
+
 
 rm topol.top
 rm \#*
