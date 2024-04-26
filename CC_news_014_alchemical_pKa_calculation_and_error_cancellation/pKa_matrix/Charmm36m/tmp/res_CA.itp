@@ -1,0 +1,5 @@
+#ifdef POSRES_CENTER
+[ position_restraints ]
+; atom  type      fx      fy      fz
+    19     1     100     100     100
+#endif
