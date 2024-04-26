@@ -25,10 +25,10 @@ for i in "${!pairs_array[@]}"; do
             gmx grompp -f ../MDP/genion.mdp  -c box_solv.pdb  -p topol.top  -o box_solv -maxwarn 1
             echo "SOL" | gmx genion -s box_solv.tpr -p topol.top -neutral -conc 0.15 -o ions.pdb
 
-            sed -i "s/NA   NA/SOD SOD/g" ions.pdb
-            sed -i "s/CL   CL/CLA CLA/g" ions.pdb
-            sed -i "s/NA/SOD/g" topol.top
-            sed -i "s/CL/CLA/g" topol.top
+            # sed -i "s/NA   NA/SOD SOD/g" ions.pdb
+            # sed -i "s/CL   CL/CLA CLA/g" ions.pdb
+            # sed -i "s/NA/SOD/g" topol.top
+            # sed -i "s/CL/CLA/g" topol.top
 
 
         fi
