@@ -1,0 +1,61 @@
+;====================================================
+; Energy minimization
+;====================================================
+
+; RUN CONTROL & MINIMIZATION
+;----------------------------------------------------
+define                 = -DFLEXIBLE -DPOSRES_CENTER
+integrator             = steep
+nsteps                 = 10000
+emtol                  = 500
+emstep                 = 0.01
+nstcomm                = 100
+
+; OUTPUT CONTROL
+;----------------------------------------------------
+nstxout                = 0          ; don't save coordinates to .trr
+nstvout                = 0          ; don't save velocities to .trr
+nstfout                = 0          ; don't save forces to .trr
+
+nstxout-compressed     = 0       ; xtc trajectory output every 1000 steps
+compressed-x-precision = 1000
+nstlog                 = 0       ; update log file every 1000 steps
+nstenergy              = 0       ; save energies every 1000 steps
+nstcalcenergy          = 100
+
+; NEIGHBOR SEARCHING
+;----------------------------------------------------
+cutoff-scheme         = Verlet ; group or Verlet
+ns-type               = grid   ; search neighboring grid cells
+nstlist               = 5      ; 
+rlist                 = 1.2    ; short-range neighborlist cutoff (in nm)
+pbc                   = xyz    ; 3D PBC
+
+
+; BONDS
+;----------------------------------------------------
+constraints            = none
+
+; ELECTROSTATICS & EWALD
+;----------------------------------------------------
+coulombtype             = PME
+rcoulomb                = 1.2
+
+; VAN DER WAALS
+;----------------------------------------------------
+vdwtype                 = Cut-off
+vdw-modifier            = Force-switch
+rvdw_switch             = 1.0
+rvdw                    = 1.2
+
+; TEMPERATURE & PRESSURE COUPL
+;----------------------------------------------------
+Tcoupl              = no
+Pcoupl              = no
+gen_vel             = no
+
+; FREE ENERGY
+;----------------------------------------------------
+free-energy       = yes
+init-lambda       = 0     ; start from state A
+delta-lambda      = 0     ; stay in state A

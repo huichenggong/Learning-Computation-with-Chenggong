@@ -1,0 +1,73 @@
+;====================================================
+; Posres equilibration
+;====================================================
+
+; RUN CONTROL
+;----------------------------------------------------
+define       = -DPOSRES_CENTER ;restrain the center CA
+integrator   = sd            ; stochastic leap-frog integrator
+nsteps       = 50000         ; 50 ps
+dt           = 0.001         ; 1 fs
+comm-mode    = Linear        ; remove center of mass translation
+nstcomm      = 100           ; frequency for center of mass motion removal
+
+; OUTPUT CONTROL
+;----------------------------------------------------
+nstxout                = 0         ; do not save coordinates to .trr
+nstvout                = 0         ; do not save velocities to .trr
+nstfout                = 0         ; do not save forces to .trr
+nstxout-compressed     = 0         ; xtc compressed trajectory output every 
+compressed-x-precision = 1000      ; precision with which to write to the compressed trajectory file
+nstlog                 = 0         ; update log file 
+nstenergy              = 0         ; save energies
+nstcalcenergy          = 100       ; calculate energies every 100 steps (default=100)
+
+; BONDS
+;----------------------------------------------------
+constraint_algorithm   = lincs      ; holonomic constraints
+constraints            = h-bonds    ; constrain H-bonds
+continuation           = yes        ; formerly known as 'unconstrained-start' - useful for exact continuations and reruns
+
+; NEIGHBOR SEARCHING
+;----------------------------------------------------
+cutoff-scheme         = Verlet ; group or Verlet
+ns-type               = grid   ; search neighboring grid cells
+nstlist               = 50     ; 
+rlist                 = 1.2    ; short-range neighborlist cutoff (in nm)
+pbc                   = xyz    ; 3D PBC
+
+; ELECTROSTATICS & EWALD
+;----------------------------------------------------
+coulombtype             = PME
+rcoulomb                = 1.2
+
+; VAN DER WAALS
+;----------------------------------------------------
+vdwtype                 = Cut-off
+vdw-modifier            = Force-switch
+rvdw_switch             = 1.0
+rvdw                    = 1.2
+
+; TEMPERATURE COUPLING (Langevin)
+;----------------------------------------------------
+tc-grps           = System
+tau-t             = 1.0
+ref-t             = 298.15
+gen-vel           = no           ; Velocity generation (if gen-vel is 'yes', continuation should be 'no')
+gen-temp          = 298.15
+gen-seed          = -1
+
+; PRESSURE COUPLING
+;----------------------------------------------------
+pcoupl           = Berendsen
+pcoupltype       = isotropic            ; uniform scaling of box vectors
+tau_p            = 0.5                  ; time constant (ps)
+ref_p            = 1.0                  ; reference pressure (bar)
+compressibility  = 4.5e-05              ; isothermal compressibility of water (bar^-1)
+refcoord-scaling = com
+
+; FREE ENERGY
+;----------------------------------------------------
+free-energy       = yes
+init-lambda       = 0     ; start from state A
+delta-lambda      = 0     ; stay in state A
