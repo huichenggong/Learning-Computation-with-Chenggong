@@ -1,0 +1,31 @@
+; Include forcefield parameters
+#include "charmm36m-mut.ff/forcefield.itp"
+
+
+; Include protein
+#include "PROTEIN_A.itp"
+#include "PROTEIN_B.itp"
+
+
+; Include water topology
+#include "charmm36m-mut.ff/tip3p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+
+; Include ions
+#include "charmm36m-mut.ff/ions.itp"
+
+[ system ]
+; Name
+HaHaHa
+    
+[ molecules ]
+; Compound        #mols
+Protein_chain_A     1
+Protein_chain_B     1
