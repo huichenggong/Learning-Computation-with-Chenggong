@@ -6,7 +6,7 @@
 ;----------------------------------------------------
 define       = -DPOSRES_CENTER ;restrain the center CA
 integrator   = sd            ; stochastic leap-frog integrator
-nsteps       = 50000         ; 50 ps
+nsteps       = 10000         ; 10 ps
 dt           = 0.001         ; 1 fs
 comm-mode    = Linear        ; remove center of mass translation
 nstcomm      = 100           ; frequency for center of mass motion removal
@@ -64,10 +64,11 @@ pcoupltype       = isotropic            ; uniform scaling of box vectors
 tau_p            = 0.5                  ; time constant (ps)
 ref_p            = 1.0                  ; reference pressure (bar)
 compressibility  = 4.5e-05              ; isothermal compressibility of water (bar^-1)
-refcoord-scaling = com
+refcoord-scaling = no
 
 ; FREE ENERGY
 ;----------------------------------------------------
 free-energy       = yes
 init-lambda       = 0     ; start from state A
 delta-lambda      = 0     ; stay in state A
+nstdhdl           = 1000  ; write free_energy.xvg very 1000 steps
