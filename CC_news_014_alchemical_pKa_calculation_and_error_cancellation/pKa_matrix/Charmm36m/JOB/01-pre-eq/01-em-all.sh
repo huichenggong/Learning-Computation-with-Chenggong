@@ -7,11 +7,11 @@ do
     cd 01-pre-eq/Lambda_0
     gmx grompp -f em.mdp -c ../../ions.pdb -r ../../ions.pdb -p ../../topol.top -o em
     gmx mdrun -deffnm em
-    gmx grompp -f em.mdp -c em.gro -r ../../ions.pdb -p ../../topol.top -o npt
+    gmx grompp -f npt.mdp -c em.gro -r ../../ions.pdb -p ../../topol.top -o npt -maxwarn 2
     gmx mdrun -deffnm npt
     cd ../../01-pre-eq/Lambda_1
     gmx grompp -f em.mdp -c ../../ions.pdb -r ../../ions.pdb -p ../../topol.top -o em
     gmx mdrun -deffnm em
-    gmx grompp -f em.mdp -c em.gro -r ../../ions.pdb -p ../../topol.top -o npt
+    gmx grompp -f npt.mdp -c em.gro -r ../../ions.pdb -p ../../topol.top -o npt -maxwarn 2
     gmx mdrun -deffnm npt
 done
