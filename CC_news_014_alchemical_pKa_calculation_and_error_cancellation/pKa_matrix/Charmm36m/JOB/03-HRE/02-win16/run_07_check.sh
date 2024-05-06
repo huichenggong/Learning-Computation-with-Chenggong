@@ -6,7 +6,7 @@ base=$PWD
 for i in $(ls -d ???-???); do
     cd $base/$i/
     echo "# $i"
-    for rep in 1 2 3 
+    for rep in 1 2 3 4 5
     do
         cd $base/$i/03-HRE/run_$rep/02-win16/
         for win in {0..15}
@@ -17,7 +17,7 @@ for i in $(ls -d ???-???); do
                 # cp $base/tmp/03-HRE/run_X/02-win16/jobscript.MD_tmp.sh ./ # please prepare your own jobscript based on your cluster
                 # sed -i "s/JOB_NAME/$i-$rep/g" jobscript.MD_tmp.sh
                 # sbatch jobscript.MD_tmp.sh
-                # break
+                break
             fi
         done
     done
