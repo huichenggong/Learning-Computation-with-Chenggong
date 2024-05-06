@@ -5,14 +5,14 @@ base=$PWD
 
 for i in $(ls -d ???-???); do
     mkdir -p $base/$i/02-PMX
-    for j in 1 2 3 # we run 3 replicas
+    for j in 1 2 3 4 5 # we run 5 replicas
     do
         cd $base/$i/02-PMX
         cp ../../tmp/02-PMX/run_X/ ./run_$j -r
         cd $base/$i/02-PMX/run_$j/eqA
-        gmx grompp -f md.mdp -c ../../../01-pre-eq/Lambda_0/npt.gro -t ../../../01-pre-eq/Lambda_0/npt.cpt -r ../../../01-pre-eq/Lambda_0/npt.gro -p ../../../topol.top -o md > grompp_md.log 2>&1 &
+        gmx grompp -f md.mdp -c ../../../01-pre-eq/Lambda_0/npt.gro -t ../../../01-pre-eq/Lambda_0/npt.cpt -r ../../../ions.pdb -p ../../../topol.top -o md > grompp_md.log 2>&1 &
         cd $base/$i/02-PMX/run_$j/eqB
-        gmx grompp -f md.mdp -c ../../../01-pre-eq/Lambda_1/npt.gro -t ../../../01-pre-eq/Lambda_1/npt.cpt -r ../../../01-pre-eq/Lambda_1/npt.gro -p ../../../topol.top -o md > grompp_md.log 2>&1 &
+        gmx grompp -f md.mdp -c ../../../01-pre-eq/Lambda_1/npt.gro -t ../../../01-pre-eq/Lambda_1/npt.cpt -r ../../../ions.pdb -p ../../../topol.top -o md > grompp_md.log 2>&1 &
         wait
         # cd $base/$i/02-PMX/run_$j/eqA
         # gmx mdrun -s md.tpr -deffnm md

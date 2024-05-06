@@ -4,7 +4,7 @@ cd ../../
 base=$PWD
 
 for i in $(ls -d ???-???); do
-    for j in 1 2 3 # we run 3 replicas
+    for j in 1 2 3 4 5 # we run 5 replicas
     do
         for state in A B
         do
