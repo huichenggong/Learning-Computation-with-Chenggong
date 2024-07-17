@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+# copy paste the charmm36m-mut.ff directory from pmx so that we no longer need to set GMXLIB.
 
 export GMXLIB=/home/chui/Downloads/pmx/src/pmx/data/mutff
 # check if charmm36-jul202X.ff exists
