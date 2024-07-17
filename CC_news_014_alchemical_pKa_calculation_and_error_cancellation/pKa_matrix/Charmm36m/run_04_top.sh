@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This script will assemble the itp files to generate the topol.top file.
+
 declare -A pairs_array  # Declare associative array
 index=0  # Initialize index
 
@@ -24,8 +26,8 @@ for i in "${!pairs_array[@]}"; do
             pwd
             cp ../tmp/topol_tmp.top ./topol.top
             # sed replace PROTEIN_A
-            sed -i "s/PROTEIN_A/$b1-$a1-withB/g" topol.top
-            sed -i "s/PROTEIN_B/$a2-$b2-withB/g" topol.top
+            sed -i "s/PROTEIN_A/$b1-$a1-withB-mass/g" topol.top
+            sed -i "s/PROTEIN_B/$a2-$b2-withB-mass/g" topol.top
 
         fi
         

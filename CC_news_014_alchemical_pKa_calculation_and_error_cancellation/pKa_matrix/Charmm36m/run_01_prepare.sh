@@ -1,4 +1,10 @@
 #!/bin/bash
+
+# This script will prepare all the possible titration-mutations pairs using pmx.
+# There will be 2 residues in one folder, in such format: 
+#    res1_deprotonated-res1_protonated
+#    res2_protonated-res2_deprotonated
+
 rm ???-??? -r
 
 declare -A pairs_array  # Declare associative array

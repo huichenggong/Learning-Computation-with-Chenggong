@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This scirpt will use pmx to generate the state B in the itp file.
+# 1 atom center of mass restrain will also be added.
+
 declare -A pairs_array  # Declare associative array
 index=0  # Initialize index
 

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This script will modify the termini and call pdb2gmx to generate the itp files.
+
 declare -A pairs_array  # Declare associative array
 index=0  # Initialize index
 

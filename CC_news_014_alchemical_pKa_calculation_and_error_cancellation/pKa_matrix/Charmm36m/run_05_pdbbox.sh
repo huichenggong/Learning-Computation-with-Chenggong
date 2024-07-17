@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# This script will move coordinate of the res2.pdb by [0 0 -5] nm and rotate by [0 0 90] degree.
+# res1.pdb and res2.pdb will be assembled into a box.pdb file.
+# A fixed initial box size will be set and a fixed number of water molecules will be added.
+
 declare -A pairs_array  # Declare associative array
 index=0  # Initialize index
 

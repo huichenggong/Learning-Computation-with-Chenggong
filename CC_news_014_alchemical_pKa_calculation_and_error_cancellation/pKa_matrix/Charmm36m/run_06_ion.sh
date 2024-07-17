@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This script will add NaCL to 150 mmol and neutralize the system. topol.top will be modified.
+
 declare -A pairs_array  # Declare associative array
 index=0  # Initialize index
 
